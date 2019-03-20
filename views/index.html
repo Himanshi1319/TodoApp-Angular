@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+  <title>TODO List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    
+ 
+</head>
+<!-- 3. Display the application -->
+
+<body>
+
+ 
+  <div class="container"   ng-controller="myCtrl" >
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <br/>
+            <h1 class="text-center">TODO APP</h1>
+            <br/>
+            <form class="form" >
+              <div class="form-group">
+                  <input ng-model="taskName.title" class="form-control" id="taskName" placeholder="Enter Task" />
+              </div>
+              <button ng-click="add()"  class="btn btn-success btn-lg btn-block" >{{label}}</button>
+          </form>
+          <br/>
+          <table class="table">
+              <tr ng-repeat="task in tasklist">
+                  <td class="text-left ">
+                    {{task.title}}
+                  </td>
+                 
+                  <td class="text-right">
+                         
+                          <button class="btn btn-info mr-1 " title="edit task" ng-click="edit(task)"> Edit </button>
+                          
+                           <button class="btn btn-danger" title="delete task" ng-click="delete(task._id)">Delete</button>
+                  </td>
+              </tr>
+          </table>
+        </div>
+    </div>
+</div>
+  
+    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js" 
+crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js" 
+crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="controllers/controller.js">
+   
+</script>
+
+</body>
+
+</html>
